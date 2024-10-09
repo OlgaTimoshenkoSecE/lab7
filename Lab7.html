@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>
+           Lab 7: HTML and CSS Basics
+        </title>
+        <style type="text/css">
+            body {background-color: #f0f0f0;}
+            h1 {font-size: 2em;
+                color: #333;}
+            p {font-size: 1em;
+                height: 1.5;}
+            li {padding: 5px;
+                background-color:#ddd;
+            }
+            section{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+            }
+            button{
+                width:12em;
+                height: 5em;
+            }
+        </style>
+    </head>
+    <body id="test">
+        <h1>Welcome to HTML and CSS basics</h1>
+        <section>
+            <p>
+                <textarea name="message" rows="3" cols="15" placeholder="write something here"></textarea>
+            </p>
+            <p>
+                <ul id="list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+            </p>
+            <p>
+                <button onclick="changeBackground()">Change Background</button>
+                <button id="addOn">Add item</button>
+            </p>
+        </section>
+        <script>
+            function changeBackground(){
+                document.getElementById("test").style.backgroundColor="#c0c0c0";
+            }
+            document.getElementById("addOn").addEventListener("click", addItem);
+            function addItem(){
+                let newEl = document.createElement('li');
+                newEl.textContent = "New Item";
+                document.getElementById("list").appendChild(newEl);
+            }
+        </script>
+    </body>
+</html>
